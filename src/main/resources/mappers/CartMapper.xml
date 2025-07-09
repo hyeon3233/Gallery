@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="xml파일과 세트인 mapper interface의 풀 네임이 들어가야 한다. -->
+<mapper namespace="kr.co.wikibook.gallery.cart.CartMapper">
+    <insert id="save">
+    INSERT INTO carts
+        SET member_id = #{memberId},
+        item_id = #{itemId}
+    </insert>
+
+    <select id="findAllWithItemByMemberId">
+        SELECT c.id, i.name, i.price, i.img_path, i.discount_per
+        FROM carts c
+        INNER JOIN items i
+        ON i.id = c.item_id
+        WHERE c.member_id = #{memberId};
+    </select>
+    
+    <delete id="deleteByMemberIdAndItemId">
+        DELETE FROM carts
+        WHERE member_id = #{memberId}
+        AND item_id = #{itemId}
+    </delete>
+</mapper>
