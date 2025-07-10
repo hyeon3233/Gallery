@@ -7,9 +7,10 @@ import lombok.ToString;
 @ToString
 public class CartGetRes {
 
-    private int price;
     private int id;
-    private int discountPer;
-    private String imgPath;
+    private int itemId;
     private String name;
+    private int price;
+    private String imgPath;
+    private int discountPer;
 }

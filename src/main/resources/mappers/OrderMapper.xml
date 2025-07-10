@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="xml파일과 세트인 mapper interface의 풀 네임이 들어가야 한다. -->
+<mapper namespace="kr.co.wikibook.gallery.order.OrderMapper">
+    <insert id="save">
+    INSERT INTO orders
+        SET member_id = #{memberId},
+        name = #{name},
+        address = #{address},
+        payment = #{payment},
+        card_number = #{cardNumder},
+        amount = #{amount}
+        <if test="cardNumber != null and cardNumber != '' ">
+            , card_numbder = #{cardNumber}
+        </if>
+        , amount = #{amount}
+    </insert>
+
+
+</mapper>

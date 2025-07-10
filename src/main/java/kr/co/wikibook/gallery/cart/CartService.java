@@ -1,6 +1,5 @@
 package kr.co.wikibook.gallery.cart;
 
-import kr.co.wikibook.gallery.account.AccountMapper;
 import kr.co.wikibook.gallery.cart.model.CartDeleteReq;
 import kr.co.wikibook.gallery.cart.model.CartGetRes;
 import kr.co.wikibook.gallery.cart.model.CartPostReq;
@@ -23,6 +22,10 @@ public class CartService {
     }
 
     public int remove(CartDeleteReq req) {
-        return cartMapper.deleteByMemberIdAndItemId(req);
+        return cartMapper.deleteByCartIdAndMemberId(req);
+    }
+
+    public int removeAll(int memberId) {
+        return cartMapper.deleteByMemberId(memberId);
     }
 }
