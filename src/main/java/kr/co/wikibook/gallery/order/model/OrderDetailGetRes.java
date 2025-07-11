@@ -4,16 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
-public class OrderPostDto {
-    private int orderId;
-    private int memberId;
+public class OrderDetailGetRes {
+    private int id;
     private String name;
     private String address;
     private String payment;
-    private String cardNumber;
     private long amount;
-
+    private String created;
+    private List<OrderDetailDto> items;
 }

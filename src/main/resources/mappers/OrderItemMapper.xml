@@ -5,7 +5,7 @@
     <insert id="save">
         INSERT INTO order_items
         ( order_id, item_id )
-        VALUSE
+        VALUES
         <foreach collection="itemIds" item="item" separator=",">
             ( #{orderId}, #{item} )
         </foreach>

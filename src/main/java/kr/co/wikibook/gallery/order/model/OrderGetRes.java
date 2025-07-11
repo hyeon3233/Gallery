@@ -1,19 +1,14 @@
 package kr.co.wikibook.gallery.order.model;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @ToString
-public class OrderPostDto {
-    private int orderId;
-    private int memberId;
+public class OrderGetRes {
+    private int id;
     private String name;
-    private String address;
     private String payment;
-    private String cardNumber;
     private long amount;
-
+    private String created;
 }
